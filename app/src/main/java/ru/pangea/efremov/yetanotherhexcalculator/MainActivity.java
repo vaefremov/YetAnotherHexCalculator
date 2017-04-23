@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 default:
                     break;
             }
+            Toast.makeText(MainActivity.this, ((Button) v).getText(), Toast.LENGTH_SHORT).show();
             currentOperand = 0;
 //            displayText.setText(Long.toHexString(currentOperand));
         }
@@ -137,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Toast.makeText(MainActivity.this, "" + position, Toast.LENGTH_SHORT).show();
             currentOperand = (currentOperand << 4) + position;
             displayText.setText(Long.toHexString(currentOperand));
         }
